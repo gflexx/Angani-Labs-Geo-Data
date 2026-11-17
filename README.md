@@ -1,6 +1,6 @@
 # Angani Geo Data
 
-Curated, open-source geospatial datasets for Kenya and East Africa, built for the [Angani Labs](https://github.com/your-username/angani-labs) climate intelligence platform.
+Curated, open-source geospatial datasets for Kenya and East Africa, built for the [Angani Labs](https://github.com/gflexx/angani-labs) geospatial intelligence platform.
 
 ## 🌍 Overview
 This repository hosts lightweight, optimized GeoJSON files representing critical infrastructure, environmental, and administrative features in Kenya. The data is generated programmatically via the OpenStreetMap (OSM) Overpass API, cleaned, simplified, and exported for direct consumption by frontend mapping libraries (e.g., Leaflet, Mapbox GL JS).
@@ -26,7 +26,7 @@ These files are served directly via GitHub's raw content delivery network. You c
 
 **Example (JavaScript / Leaflet):**
 ```javascript
-const GEOJSON_URL = "https://raw.githubusercontent.com/your-username/angani-geo-data/main/water_points.geojson";
+const GEOJSON_URL = "https://raw.githubusercontent.com/gflexx/angani-geo-data/main/water_points.geojson";
 
 fetch(GEOJSON_URL)
   .then(res => res.json())
