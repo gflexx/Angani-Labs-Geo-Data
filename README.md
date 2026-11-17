@@ -41,3 +41,37 @@ fetch(GEOJSON_URL)
       })
     }).addTo(map);
   });
+```
+---
+
+## ⚙️ Data Pipeline Architecture
+
+The spatial datasets powering Angani Labs are not manually curated. They are generated and maintained via an automated Python pipeline running on Kaggle:
+
+* **Ingestion:** Queries the **Overpass API** using targeted bounding boxes and precise OpenStreetMap (OSM) feature tags.
+* **Conversion:** Transforms raw OSM XML/JSON payloads into standardized GeoJSON via `osm2geojson`.
+* **Optimization:** Simplifies complex geometries using **Shapely** to minimize bundle size, optimize network payloads, and guarantee high-performance client-side rendering.
+* **Cleaning:** Automatically deduplicates features and validates schemas to export clean, production-ready vector layers.
+
+> *To inspect, modify, or regenerate layers, explore the `pipeline/` directory or reference the associated Kaggle Notebook.*
+
+---
+
+## ⚖️ License & Attribution
+
+All spatial features derived within this repository are sourced from **OpenStreetMap**, licensed under the **Open Data Commons Open Database License (ODbL)**. 
+
+By consuming or displaying this data, you agree to uphold proper attribution standards:
+
+> **© OpenStreetMap contributors**
+
+### Usage Scope
+This repository is maintained by **Angani Labs** for non-commercial, humanitarian, and climate-tech applications across East Africa. For commercial licensing inquiries regarding derived analytical layers, please review the official ODbL guidelines.
+
+---
+
+## 🤝 Contributing & Maintenance
+
+Spotted an unmapped water point, a missing health facility, or an outdated regional boundary? 
+
+The canonical source of truth is OpenStreetMap. The most effective way to contribute is to **edit OpenStreetMap directly**. Subsequent executions of the automated pipeline will automatically ingest, process, and reflect your updates.
